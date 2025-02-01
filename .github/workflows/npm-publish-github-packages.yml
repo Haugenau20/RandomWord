@@ -7,8 +7,8 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: write      # This is important
+  id-token: write   # This is important
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install  # Changed from npm ci to npm install
+        run: npm install
       - name: Build
         run: npm run build
       - name: Setup Pages
