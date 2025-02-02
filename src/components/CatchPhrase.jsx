@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Sparkles, Bomb } from 'lucide-react';
+import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Cloud, Sparkles } from 'lucide-react';
 
 const CatchPhrase = ({ onBack }) => {
   const presetPhrases = {
@@ -67,7 +67,7 @@ const CatchPhrase = ({ onBack }) => {
 
   const categoryIcons = {
     'Entering battle': Swords,
-    'Dealing damage in battle': Bomb,
+    'Dealing damage in battle': Cloud,
     'Traveling between places': Navigation,
     'Entering dark and gloomy places': Skull,
     'Misc': Sparkles
@@ -79,6 +79,7 @@ const CatchPhrase = ({ onBack }) => {
   });
   const [input, setInput] = useState('');
   const [selectedPhrase, setSelectedPhrase] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -111,6 +112,7 @@ const CatchPhrase = ({ onBack }) => {
     if (!categoryPhrases || categoryPhrases.length === 0) return;
     
     setIsAnimating(true);
+    setSelectedCategory(category);
     
     let flashCount = 0;
     const flashInterval = setInterval(() => {
@@ -129,6 +131,7 @@ const CatchPhrase = ({ onBack }) => {
     if (phrases.length === 0) return;
     
     setIsAnimating(true);
+    setSelectedCategory('Custom Phrases');
     
     let flashCount = 0;
     const flashInterval = setInterval(() => {
@@ -268,7 +271,7 @@ const CatchPhrase = ({ onBack }) => {
         {/* Selected Phrase Display */}
         {selectedPhrase && (
           <div className={`mt-6 p-6 bg-slate-800 rounded-lg text-center ${isAnimating ? 'animate-pulse' : ''}`}>
-            <h3 className="text-lg text-purple-400 mb-2">Your Phrase:</h3>
+            <h3 className="text-lg text-purple-400 mb-2">{selectedCategory}:</h3>
             <p className="text-2xl font-bold text-white">{selectedPhrase}</p>
           </div>
         )}
