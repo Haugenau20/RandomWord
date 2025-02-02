@@ -94,8 +94,8 @@ const WordPicker = () => {
     <div className="max-w-6xl mx-auto p-6">
       {/* Main Content */}
       <div className="flex gap-6">
-        {/* Command Words Panel */}
-        <div className="w-64 bg-slate-800 p-4 rounded-lg h-fit">
+        {/* Command Words Panel - Moved to bottom on mobile */}
+        <div className="w-full md:w-64 bg-slate-800 p-4 rounded-lg h-fit order-2 md:order-1">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Zap className="text-yellow-400" />
