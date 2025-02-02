@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Cloud, Zap, Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import JavelinOverlay from './JavelinOverlay';
 
 const WordPicker = ({ onBack }) => {
   const defaultWords = [
@@ -80,7 +81,8 @@ const WordPicker = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
+      <JavelinOverlay isAnimating={isAnimating} />
       <div className="container mx-auto max-w-2xl px-4 py-6">
         {/* Header with Back Button */}
         <div className="flex items-center gap-4 mb-6">
