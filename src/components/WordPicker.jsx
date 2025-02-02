@@ -2,11 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Cloud, Zap, Share2 } from 'lucide-react';
 
 const WordPicker = () => {
+  const defaultWords = [
+    "Thunderbolt",
+    "Lightning",
+    "Storm",
+    "Tempest",
+    "Hurricane"
+  ];
+
   const [words, setWords] = useState(() => {
     // Initialize from localStorage if available
     const savedWords = localStorage.getItem('stormWords');
     return savedWords ? JSON.parse(savedWords) : [];
   });
+
+  const addDefaultWords = () => {
+    // Add default words without duplicates
+    const newWords = [...new Set([...words, ...defaultWords])];
+    setWords(newWords);
+  };
   const [input, setInput] = useState('');
   const [selectedWord, setSelectedWord] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
@@ -77,7 +91,7 @@ const WordPicker = () => {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2 text-2xl font-bold">
           <Cloud className="text-blue-400" />
-          Javelin of Lightning Command Word!
+          Storm Oracle Word Picker
           <Zap className="text-yellow-400" />
         </div>
         <button
@@ -115,12 +129,20 @@ const WordPicker = () => {
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-lg">Words in the Storm:</h3>
           {words.length > 0 && (
+            <div>
+            <button
+              onClick={addDefaultWords}
+              className="text-sm text-blue-400 hover:text-blue-300 mr-4"
+            >
+              Add Storm Words
+            </button>
             <button
               onClick={clearAllWords}
               className="text-sm text-red-400 hover:text-red-300"
             >
               Clear All
             </button>
+          </div>
           )}
         </div>
         <div className="flex flex-wrap gap-2">
