@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, Zap, Share2, Eye, EyeOff } from 'lucide-react';
+import { Cloud, Zap, Eye, EyeOff } from 'lucide-react';
 
 const WordPicker = () => {
   const defaultWords = [
@@ -64,16 +64,6 @@ const WordPicker = () => {
     setWords(words.filter((_, index) => index !== indexToRemove));
   };
 
-  const shareWordList = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setShowCopied(true);
-      setTimeout(() => setShowCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy link:', err);
-    }
-  };
-
   const clearAllWords = () => {
     if (window.confirm('Are you sure you want to clear all words?')) {
       setWords([]);
@@ -92,30 +82,16 @@ const WordPicker = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto max-w-2xl px-4 py-6">
         {/* Main Word Picker Section */}
         <div className="bg-slate-900 rounded-lg shadow-xl mb-4">
           <div className="flex flex-col gap-4">
             {/* Header */}
             <div className="flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-                  <Cloud className="text-blue-400" />
-                  Javelin of Lightning Command Words!
-                </h1>
-              </div>
-              <button
-                onClick={shareWordList}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
-              >
-                <Share2 size={16} />
-                Share Link
-                {showCopied && (
-                  <span className="absolute mt-8 px-2 py-1 bg-green-600 rounded text-sm">
-                    Copied!
-                  </span>
-                )}
-              </button>
+              <h1 className="text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <Cloud className="text-blue-400" />
+                Javelin of Lightning Command Words!
+              </h1>
             </div>
 
             {/* Input Section */}
