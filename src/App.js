@@ -4,7 +4,7 @@ import WordPicker from './components/WordPicker';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 p-4">
+    <div className="bg-gray-900">
       <WordPicker />
     </div>
   );
