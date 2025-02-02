@@ -170,7 +170,7 @@ const WordPicker = () => {
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Zap className="text-yellow-400" />
-              Command Words
+              Ancient Lightning Words
               <button
                 onClick={toggleDefaultWords}
                 className="text-white hover:text-blue-400 transition-colors"
@@ -195,7 +195,7 @@ const WordPicker = () => {
             onClick={addDefaultWords}
             className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
           >
-            Add Command Words
+            Inscribe New Words
           </button>
         </div>
       </div>
