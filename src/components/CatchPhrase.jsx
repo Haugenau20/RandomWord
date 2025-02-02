@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Cloud, Sparkles } from 'lucide-react';
+import LightningOverlay from './LightningOverlay';
 
 const CatchPhrase = ({ onBack }) => {
   const presetPhrases = {
@@ -164,8 +165,9 @@ const CatchPhrase = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
-      <div className="container mx-auto max-w-2xl px-4 py-6">
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
+      <LightningOverlay isAnimating={isAnimating} />
+      <div className="container mx-auto max-w-2xl px-4 py-6 relative z-10">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <button 
