@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, Zap, Share2 } from 'lucide-react';
+import { Cloud, Zap, Share2, Eye, EyeOff } from 'lucide-react';
 
 const WordPicker = () => {
   const defaultWords = [
@@ -20,6 +20,7 @@ const WordPicker = () => {
   const [selectedWord, setSelectedWord] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCopied, setShowCopied] = useState(false);
+  const [showDefaultWords, setShowDefaultWords] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('stormWords', JSON.stringify(words));
@@ -43,13 +44,15 @@ const WordPicker = () => {
   };
 
   const pickRandomWord = () => {
-    if (words.length === 0) return;
+    // Combine user words and default words for selection
+    const allWords = [...words, ...defaultWords];
+    if (allWords.length === 0) return;
     
     setIsAnimating(true);
     
     let flashCount = 0;
     const flashInterval = setInterval(() => {
-      setSelectedWord(words[Math.floor(Math.random() * words.length)]);
+      setSelectedWord(allWords[Math.floor(Math.random() * allWords.length)]);
       flashCount++;
       
       if (flashCount >= 10) {
@@ -85,23 +88,38 @@ const WordPicker = () => {
     setWords(newWords);
   };
 
+  const toggleDefaultWords = () => {
+    setShowDefaultWords(!showDefaultWords);
+  };
+
   return (
     <div className="max-w-6xl mx-auto p-6">
       {/* Main Content */}
       <div className="flex gap-6">
-        {/* Storm Words Panel */}
+        {/* Command Words Panel */}
         <div className="w-64 bg-slate-800 p-4 rounded-lg h-fit">
-          <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
-            <Zap className="text-yellow-400" />
-            Command Words
-          </h3>
-          <div className="flex flex-col gap-2">
-            {defaultWords.map((word, index) => (
-              <div key={index} className="px-3 py-1 bg-slate-700 text-white rounded">
-                {word}
-              </div>
-            ))}
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <Zap className="text-yellow-400" />
+              Command Words
+            </h3>
+            <button
+              onClick={toggleDefaultWords}
+              className="text-white hover:text-blue-400 transition-colors"
+              title={showDefaultWords ? "Hide Command Words" : "Show Command Words"}
+            >
+              {showDefaultWords ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
           </div>
+          {showDefaultWords && (
+            <div className="flex flex-col gap-2">
+              {defaultWords.map((word, index) => (
+                <div key={index} className="px-3 py-1 bg-slate-700 text-white rounded">
+                  {word}
+                </div>
+              ))}
+            </div>
+          )}
           <button
             onClick={addDefaultWords}
             className="w-full mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
@@ -150,7 +168,7 @@ const WordPicker = () => {
 
           <div className="mb-6">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-lg">Words in the Storm:</h3>
+              <h3 className="text-lg">Your Added Words:</h3>
               {words.length > 0 && (
                 <button
                   onClick={clearAllWords}
@@ -181,9 +199,9 @@ const WordPicker = () => {
           <div className="text-center">
             <button
               onClick={pickRandomWord}
-              disabled={words.length === 0 || isAnimating}
+              disabled={words.length === 0 && defaultWords.length === 0 || isAnimating}
               className={`px-6 py-3 rounded-lg font-bold text-lg transition-all ${
-                words.length === 0
+                words.length === 0 && defaultWords.length === 0
                   ? 'bg-slate-700 cursor-not-allowed'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
               }`}
