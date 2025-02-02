@@ -205,8 +205,16 @@ const CatchPhrase = ({ onBack }) => {
           </div>
         </div>
 
+        {/* Selected Phrase Display */}
+        {selectedPhrase && (
+          <div className={`mb-6 p-6 bg-slate-800 rounded-lg text-center ${isAnimating ? 'animate-pulse' : ''}`}>
+            <h3 className="text-lg text-purple-400 mb-2">{selectedCategory}:</h3>
+            <p className="text-2xl font-bold text-white">{selectedPhrase}</p>
+          </div>
+        )}
+
         {/* Custom Phrases Section */}
-        <div className="bg-slate-800 rounded-lg p-6 mb-6">
+        <div className="bg-slate-800 rounded-lg p-6">
           <h2 className="text-xl font-bold text-white mb-4">Custom Phrases:</h2>
           
           {/* Input Section */}
@@ -229,7 +237,7 @@ const CatchPhrase = ({ onBack }) => {
 
           {/* Custom Phrases List */}
           {phrases.length > 0 && (
-            <div className="mb-4">
+            <div>
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-lg text-white">Your Phrases:</h3>
                 <button
@@ -269,14 +277,6 @@ const CatchPhrase = ({ onBack }) => {
             </div>
           )}
         </div>
-
-        {/* Selected Phrase Display */}
-        {selectedPhrase && (
-          <div className={`mt-6 p-6 bg-slate-800 rounded-lg text-center ${isAnimating ? 'animate-pulse' : ''}`}>
-            <h3 className="text-lg text-purple-400 mb-2">{selectedCategory}:</h3>
-            <p className="text-2xl font-bold text-white">{selectedPhrase}</p>
-          </div>
-        )}
       </div>
     </div>
   );
