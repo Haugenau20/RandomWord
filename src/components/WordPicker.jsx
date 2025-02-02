@@ -44,15 +44,13 @@ const WordPicker = () => {
   };
 
   const pickRandomWord = () => {
-    // Combine user words and default words for selection
-    const allWords = [...words, ...defaultWords];
-    if (allWords.length === 0) return;
+    if (words.length === 0) return;
     
     setIsAnimating(true);
     
     let flashCount = 0;
     const flashInterval = setInterval(() => {
-      setSelectedWord(allWords[Math.floor(Math.random() * allWords.length)]);
+      setSelectedWord(words[Math.floor(Math.random() * words.length)]);
       flashCount++;
       
       if (flashCount >= 10) {
@@ -199,9 +197,9 @@ const WordPicker = () => {
           <div className="text-center">
             <button
               onClick={pickRandomWord}
-              disabled={words.length === 0 && defaultWords.length === 0 || isAnimating}
+              disabled={words.length === 0 || isAnimating}
               className={`px-6 py-3 rounded-lg font-bold text-lg transition-all ${
-                words.length === 0 && defaultWords.length === 0
+                words.length === 0
                   ? 'bg-slate-700 cursor-not-allowed'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
               }`}
