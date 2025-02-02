@@ -93,7 +93,7 @@ const WordPicker = () => {
         <div className="w-64 bg-slate-800 p-4 rounded-lg h-fit">
           <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
             <Zap className="text-yellow-400" />
-            Storm Words
+            Command Words
           </h3>
           <div className="flex flex-col gap-2">
             {defaultWords.map((word, index) => (
@@ -106,7 +106,7 @@ const WordPicker = () => {
             onClick={addDefaultWords}
             className="w-full mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
           >
-            Add Storm Words
+            Add Command Words
           </button>
         </div>
 
@@ -115,7 +115,7 @@ const WordPicker = () => {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2 text-2xl font-bold">
               <Cloud className="text-blue-400" />
-              Storm Oracle Word Picker
+              Javelin of Lightning Command Words!
             </div>
             <button
               onClick={shareWordList}
