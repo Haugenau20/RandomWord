@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Cloud, Sparkles, Bomb } from 'lucide-react';
+import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Sparkles, Bomb } from 'lucide-react';
 
 const CatchPhrase = ({ onBack }) => {
   const presetPhrases = {

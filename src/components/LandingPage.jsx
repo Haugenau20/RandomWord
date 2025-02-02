@@ -19,7 +19,7 @@ const LandingPage = ({ onNavigate }) => {
               <Zap className="w-12 h-12 text-yellow-400 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <h2 className="text-xl font-bold text-white mb-2">Javelin of Lightning</h2>
-                <p className="text-blue-100">Command your lightning javelin with ancient words of power</p>
+                <p className="text-blue-100">Command the Javelin of Lightning with ancient words of power</p>
               </div>
             </div>
           </button>
