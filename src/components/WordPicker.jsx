@@ -19,7 +19,6 @@ const WordPicker = () => {
   const [input, setInput] = useState('');
   const [selectedWord, setSelectedWord] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
-  const [showCopied, setShowCopied] = useState(false);
   const [showDefaultWords, setShowDefaultWords] = useState(false);
 
   useEffect(() => {
