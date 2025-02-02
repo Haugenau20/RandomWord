@@ -77,7 +77,7 @@ const WordPicker = () => {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2 text-2xl font-bold">
           <Cloud className="text-blue-400" />
-          Storm Oracle Word Picker
+          Javelin of Lightning Command Word!
           <Zap className="text-yellow-400" />
         </div>
         <button
