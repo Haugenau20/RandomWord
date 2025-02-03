@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import WordPicker from './components/WordPicker';
 import LandingPage from './components/LandingPage';
@@ -9,18 +9,41 @@ import Spells from './components/Spells';
 function App() {
   const [currentPage, setCurrentPage] = useState('landing');
 
+  useEffect(() => {
+    // Handle browser back button
+    const handlePopState = (event) => {
+      if (event.state?.page) {
+        setCurrentPage(event.state.page);
+      } else {
+        setCurrentPage('landing');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
   const handleNavigation = (page) => {
+    // Push new state to browser history
+    window.history.pushState({ page }, '', `/${page}`);
     setCurrentPage(page);
+  };
+
+  const handleBack = () => {
+    window.history.back();
   };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'javelin':
-        return <WordPicker onBack={() => setCurrentPage('landing')} />;
+        return <WordPicker onBack={handleBack} />;
       case 'catchphrase':
-        return <CatchPhrase onBack={() => setCurrentPage('landing')} />;
+        return <CatchPhrase onBack={handleBack} />;
       case 'spells':
-        return <Spells onBack={() => setCurrentPage('landing')} />;
+        return <Spells onBack={handleBack} />;
       default:
         return <LandingPage onNavigate={handleNavigation} />;
     }
