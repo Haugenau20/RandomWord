@@ -11,7 +11,7 @@ const Spells = ({ onBack }) => {
         "Ved Thors mægtige hammer, jeg påkalder din kraft!",
         "Lad tordenen være mit vidne!",
         "Guddommelig storm, hør mit kald!",
-        "Ved lysets og stormens kraft, jeg kanaliserer!",
+        "Jeg kanaliserer lysets og stormens kraft",
         "Thor, lad din vilje strømme gennem mig!"
       ],
       'Wrath of the Storm': [

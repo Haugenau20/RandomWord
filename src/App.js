@@ -5,6 +5,7 @@ import WordPicker from './components/WordPicker';
 import LandingPage from './components/LandingPage';
 import CatchPhrase from './components/CatchPhrase';
 import Spells from './components/Spells';
+import SocialInteractions from './components/SocialInteractions';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('landing');
@@ -27,7 +28,6 @@ function App() {
   }, []);
 
   const handleNavigation = (page) => {
-    // Push new state to browser history
     window.history.pushState({ page }, '', `/${page}`);
     setCurrentPage(page);
   };
@@ -44,6 +44,8 @@ function App() {
         return <CatchPhrase onBack={handleBack} />;
       case 'spells':
         return <Spells onBack={handleBack} />;
+      case 'social':
+        return <SocialInteractions onBack={handleBack} />;
       default:
         return <LandingPage onNavigate={handleNavigation} />;
     }
@@ -55,5 +57,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
