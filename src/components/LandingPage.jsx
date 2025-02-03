@@ -14,7 +14,7 @@ const LandingPage = ({ onNavigate }) => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <button
             onClick={() => onNavigate('javelin')}
-            className="p-6 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-xl hover:from-blue-700 hover:to-blue-900 transition-all group"
+            className="p-6 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-xl hover:from-blue-500 hover:to-blue-700 transition-all group"
           >
             <div className="flex flex-col items-center gap-4">
               <Zap className="w-12 h-12 text-yellow-400 group-hover:scale-110 transition-transform" />
@@ -27,7 +27,7 @@ const LandingPage = ({ onNavigate }) => {
 
           <button
             onClick={() => onNavigate('catchphrase')}
-            className="p-6 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg shadow-xl hover:from-purple-700 hover:to-purple-900 transition-all group"
+            className="p-6 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg shadow-xl hover:from-purple-500 hover:to-purple-700 transition-all group"
           >
             <div className="flex flex-col items-center gap-4">
               <MessageCircle className="w-12 h-12 text-purple-200 group-hover:scale-110 transition-transform" />

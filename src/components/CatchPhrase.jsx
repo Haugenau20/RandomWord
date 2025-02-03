@@ -194,7 +194,7 @@ const CatchPhrase = ({ onBack }) => {
                   onClick={() => pickRandomPhraseFromCategory(category)}
                   disabled={isAnimating}
                   className="p-4 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg 
-                           hover:from-purple-700 hover:to-purple-900 transition-all
+                           hover:from-purple-500 hover:to-purple-700 transition-all
                            flex items-center gap-3 text-white font-medium"
                 >
                   <IconComponent className="w-5 h-5" />
@@ -229,7 +229,7 @@ const CatchPhrase = ({ onBack }) => {
             />
             <button
               onClick={handleAddPhrase}
-              className="w-full sm:w-auto px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded font-medium transition-colors"
+              className="w-full sm:w-auto px-4 py-2 bg-purple-400 hover:bg-purple-500 text-white rounded font-medium transition-colors"
             >
               Add Phrase
             </button>
@@ -270,7 +270,7 @@ const CatchPhrase = ({ onBack }) => {
               <button
                 onClick={pickRandomFromCustom}
                 className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 
-                         hover:from-purple-700 hover:to-pink-700 text-white rounded font-medium transition-colors"
+                         hover:from-purple-500 hover:to-pink-500 text-white rounded font-medium transition-colors"
               >
                 Pick Random Custom Phrase
               </button>

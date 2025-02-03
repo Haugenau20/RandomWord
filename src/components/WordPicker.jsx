@@ -110,7 +110,7 @@ const WordPicker = ({ onBack }) => {
           />
           <button
             onClick={handleAddWord}
-            className="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
+            className="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded font-medium transition-colors"
           >
             Add Word
           </button>
@@ -155,7 +155,7 @@ const WordPicker = ({ onBack }) => {
             className={`w-full sm:w-auto px-6 py-3 rounded-lg font-bold text-lg transition-all ${
               words.length === 0
                 ? 'bg-slate-700 cursor-not-allowed'
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500'
             }`}
           >
             {isAnimating ? 'Consulting the Storm...' : 'Call Upon the Storm'}
@@ -196,7 +196,7 @@ const WordPicker = ({ onBack }) => {
           
           <button
             onClick={addDefaultWords}
-            className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
+            className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded font-medium transition-colors"
           >
             Inscribe New Words
           </button>
