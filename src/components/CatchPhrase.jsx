@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Cloud, Sparkles } from 'lucide-react';
+import { MessageCircle, ArrowLeft, Swords, Navigation, Skull, Bomb, Sparkles } from 'lucide-react';
 import LightningOverlay from './LightningOverlay';
 
 const CatchPhrase = ({ onBack }) => {
@@ -68,7 +68,7 @@ const CatchPhrase = ({ onBack }) => {
 
   const categoryIcons = {
     'Entering battle': Swords,
-    'Dealing damage in battle': Cloud,
+    'Dealing damage in battle': Bomb,
     'Traveling between places': Navigation,
     'Entering dark and gloomy places': Skull,
     'Misc': Sparkles
