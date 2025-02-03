@@ -136,9 +136,6 @@ const Spells = ({ onBack }) => {
                              text-white font-medium text-left"
                   >
                     {spellName}
-                    <div className="text-sm text-cyan-200 mt-1">
-                      {phrases.length} phrases
-                    </div>
                   </button>
                 ))}
               </div>
