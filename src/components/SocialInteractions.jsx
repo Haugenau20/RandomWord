@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Crown, Swords, Prison, Mountain, Users } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { 
+  GiCrown, 
+  GiCrossedSwords, 
+  GiImprisoned, 
+  GiMountainRoad,
+  GiTabletopPlayers 
+} from "react-icons/gi";
 import LightningOverlay from './LightningOverlay';
 
 const SocialInteractions = ({ onBack }) => {
   const socialPhrases = {
     'When Meeting Nobility': [
       "Vejret skifter hurtigt blandt de høje tårne, ikke sandt?",
+      "Ah, endnu en der tror deres guld kan købe respekt.",
       "Jeg bukker kun for tordenen, ædle herre/frue.",
       "Stormene husker alle lige, uanset deres titel.",
       "Selv de fineste silkekåber bliver våde i regnen.",
@@ -54,10 +62,10 @@ const SocialInteractions = ({ onBack }) => {
   };
 
   const categoryIcons = {
-    'When Meeting Nobility': Crown,
-    'Meeting Fellow Gladiators': Swords,
-    'Speaking to the Oppressed': Prison,
-    'About Goliath Heritage': Mountain
+    'When Meeting Nobility': GiCrown,
+    'Meeting Fellow Gladiators': GiCrossedSwords,
+    'Speaking to the Oppressed': GiImprisoned,
+    'About Goliath Heritage': GiMountainRoad
   };
 
   const [selectedPhrase, setSelectedPhrase] = useState('');
@@ -97,7 +105,7 @@ const SocialInteractions = ({ onBack }) => {
             <ArrowLeft size={24} />
           </button>
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-            <Users className="text-emerald-400" />
+            <GiTabletopPlayers className="text-emerald-400 w-6 h-6" />
             Social Interactions
           </h1>
         </div>
