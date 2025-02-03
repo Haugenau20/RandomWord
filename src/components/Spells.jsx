@@ -8,65 +8,87 @@ const Spells = ({ onBack }) => {
   const spellsByLevel = {
     'Class Features': {
       'Channel Divinity': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Ved Thors mægtige hammer, jeg påkalder din kraft!",
+        "Lad tordenen være mit vidne!",
+        "Guddommelig storm, hør mit kald!",
+        "Ved lysets og stormens kraft, jeg kanaliserer!",
+        "Thor, lad din vilje strømme gennem mig!"
       ],
       'Wrath of the Storm': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Mærk himlens vrede!",
+        "Tordenen er min at befale!",
+        "Lad stormen straffe dig!",
+        "Ved Thors lynild, brænd!",
+        "Himlen selv fordømmer dig!"
       ]
     },
     'Level 1': {
       'Cure Wounds': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Lad stormens styrke hele dine sår!",
+        "Ved tordenens kraft, rejs dig!",
+        "Thor skænker dig styrke påny!",
+        "Lad regnen vaske dine sår væk!",
+        "Mærk naturens helende kraft!"
       ],
       'Thunderwave': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Blæs som en storm i natten!",
+        "Flyv væk med vinden!",
+        "Mærk presset fra min torden!",
+        "Thor kaster dig tilbage!",
+        "La' mig vise dig stormens kraft!"
       ]
     },
     'Level 2': {
       'Lesser Restoration': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Lad tordenen rense dit sind!",
+        "Ved Thors kraft, være helbredt!",
+        "Stormen vasker dit sind rent!",
+        "Rens som regnen efter uvejret!",
+        "Lad lynet brænde dit mareridt væk!"
       ],
       'Shatter': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Knust af himlens kraft!",
+        "Hør tordenens sang!",
+        "Splintres som glas i stormen!",
+        "Mærk lydens rasende kraft!",
+        "Ved Thors brøl, knuses du!"
       ]
     },
     'Level 3': {
       'Call Lightning': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Thor, send din vrede!",
+        "Dans, himmelske lyn!",
+        "Stormens pile, find dit mål!",
+        "Himlens vrede er min at kalde!",
+        "Ved min hånd, lyner falder!"
       ],
       'Dispel Magic': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Ved stormens kraft, forsvind!",
+        "Thor nægter din magi!",
+        "Blæst væk af naturens kraft!",
+        "Tordenen ophæver din kunst!",
+        "Ved min guds vilje, ophør!"
       ],
       'Remove Curse': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Tordenen renser din forbandelse!",
+        "Ved Thors hammer, være fri!",
+        "Lad stormen vaske din byrde væk!",
+        "Lynet brænder dine lænker!",
+        "Himlen frigør dig fra mørket!"
       ],
       'Revivify': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Thor nægter din død!",
+        "Rejs dig ved stormens kraft!",
+        "Tordenen kalder dig tilbage!",
+        "Vågn ved lysets glimt!",
+        "Ved himlens kraft, lev igen!"
       ],
       'Spirit Guardians': [
-        "Placeholder phrase 1",
-        "Placeholder phrase 2",
-        "Placeholder phrase 3"
+        "Thors krigere, beskyt os!",
+        "Dans omkring mig, stormens ånder!",
+        "Kæmp ved min side, himlens vogtere!",
+        "Ved tordenen, omring mig!",
+        "Lysets og stormens væsner, frem!"
       ]
     }
   };
