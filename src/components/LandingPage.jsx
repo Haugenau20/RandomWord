@@ -53,7 +53,7 @@ const LandingPage = ({ onNavigate }) => {
 
           <button
             onClick={() => onNavigate('social')}
-            className="p-6 bg-gradient-to-br from-amber-600 to-red-800 rounded-lg shadow-xl hover:from-amber-500 hover:to-red-700 transition-all group"
+            className="p-6 bg-gradient-to-br from-emerald-600 to-teal-900 rounded-lg shadow-xl hover:from-emerald-500 hover:to-teal-800 transition-all group"
           >
             <div className="flex flex-col items-center gap-4">
               <Users className="w-12 h-12 text-amber-200 group-hover:scale-110 transition-transform" />
