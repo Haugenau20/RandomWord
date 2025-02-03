@@ -71,6 +71,7 @@ const SocialInteractions = ({ onBack }) => {
   const [selectedPhrase, setSelectedPhrase] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState(null);
 
   const pickRandomPhraseFromCategory = (category) => {
     const categoryPhrases = socialPhrases[category];
@@ -78,6 +79,7 @@ const SocialInteractions = ({ onBack }) => {
     
     setIsAnimating(true);
     setSelectedCategory(category);
+    setExpandedCategory(category);
     
     let flashCount = 0;
     const flashInterval = setInterval(() => {
@@ -139,6 +141,28 @@ const SocialInteractions = ({ onBack }) => {
                           rounded-lg text-center ${isAnimating ? 'animate-pulse' : ''}`}>
             <h3 className="text-lg text-emerald-400 mb-2">{selectedCategory}:</h3>
             <p className="text-2xl font-bold text-white">{selectedPhrase}</p>
+          </div>
+        )}
+
+        {/* Full List of Phrases for Selected Category */}
+        {expandedCategory && (
+          <div className="mt-8 p-6 bg-slate-800 rounded-lg">
+            <h3 className="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2">
+              {categoryIcons[expandedCategory] && React.createElement(categoryIcons[expandedCategory], { className: "w-6 h-6" })}
+              {expandedCategory} - All Phrases:
+            </h3>
+            <div className="space-y-3">
+              {socialPhrases[expandedCategory].map((phrase, index) => (
+                <div 
+                  key={index}
+                  className={`p-3 rounded ${phrase === selectedPhrase 
+                    ? 'bg-emerald-900/50 text-emerald-200' 
+                    : 'bg-slate-700 text-white'}`}
+                >
+                  {phrase}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
