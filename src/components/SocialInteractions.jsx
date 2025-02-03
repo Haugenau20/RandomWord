@@ -7,13 +7,11 @@ import {
   GiMountainRoad,
   GiTabletopPlayers 
 } from "react-icons/gi";
-import LightningOverlay from './LightningOverlay';
 
 const SocialInteractions = ({ onBack }) => {
   const socialPhrases = {
     'When Meeting Nobility': [
       "Vejret skifter hurtigt blandt de høje tårne, ikke sandt?",
-      "Ah, endnu en der tror deres guld kan købe respekt.",
       "Jeg bukker kun for tordenen, ædle herre/frue.",
       "Stormene husker alle lige, uanset deres titel.",
       "Selv de fineste silkekåber bliver våde i regnen.",
@@ -96,7 +94,6 @@ const SocialInteractions = ({ onBack }) => {
 
   return (
     <div className="min-h-screen bg-slate-900 relative overflow-hidden">
-      <LightningOverlay isAnimating={isAnimating} />
       <div className="container mx-auto max-w-4xl px-4 py-6">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">

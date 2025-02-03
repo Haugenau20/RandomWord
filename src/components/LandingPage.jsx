@@ -56,10 +56,10 @@ const LandingPage = ({ onNavigate }) => {
             className="p-6 bg-gradient-to-br from-emerald-600 to-teal-900 rounded-lg shadow-xl hover:from-emerald-500 hover:to-teal-800 transition-all group"
           >
             <div className="flex flex-col items-center gap-4">
-              <Users className="w-12 h-12 text-amber-200 group-hover:scale-110 transition-transform" />
+              <Users className="w-12 h-12 text-emerald-200 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <h2 className="text-xl font-bold text-white mb-2">Social Interactions</h2>
-                <p className="text-amber-100">Navigate social situations with grace</p>
+                <p className="text-emerald-100">Navigate social situations with grace</p>
               </div>
             </div>
           </button>
