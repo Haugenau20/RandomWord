@@ -40,10 +40,10 @@ const LandingPage = ({ onNavigate }) => {
 
           <button
             onClick={() => onNavigate('spells')}
-            className="p-6 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg shadow-xl hover:from-indigo-700 hover:to-indigo-900 transition-all group"
+            className="p-6 bg-gradient-to-br from-cyan-600 to-blue-800 rounded-lg shadow-xl hover:from-cyan-500 hover:to-blue-700 transition-all group"
           >
             <div className="flex flex-col items-center gap-4">
-              <Sparkles className="w-12 h-12 text-indigo-200 group-hover:scale-110 transition-transform" />
+              <Sparkles className="w-12 h-12 text-cyan-200 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <h2 className="text-xl font-bold text-white mb-2">Spell Phrases</h2>
                 <p className="text-indigo-100">Manage your magical incantations</p>
